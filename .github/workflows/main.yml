@@ -24,7 +24,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: "main.tex"
-          pre_compile: "inkscape -D orbitals.svg  -o orbitals.pdf --export-latex"
+          pre_compile: "sudo add-apt-repository ppa:inkscape.dev/stable && sudo apt update && sudo apt install inkscape && inkscape -D orbitals.svg  -o orbitals.pdf --export-latex"
           post_compile: "latexmk -c"
           
       - name: GitHub Commit & Push
