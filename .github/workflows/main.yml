@@ -26,7 +26,7 @@ jobs:
       - name: Install Inkscape
         run: "sudo apt install inkscape"
       - name: Convert SVG
-        run: " inkscape -D orbitals.svg  -o orbitals.pdf --export-latex"
+        run: " inkscape -D orbitals.svg  -o orbitals.pdf --without-gui --export-latex"
         
       # Runs a single command using the runners shell
       - name: LaTeX Compile
@@ -34,7 +34,7 @@ jobs:
         with:
           root_file: "main.tex"
           post_compile: "latexmk -c"
-          
+          latexmk_shell_escape: true
       - name: GitHub Commit & Push
   # You may pin to the exact commit or the version.
   # uses: actions-js/push@4decc2887d2770f29177082be3c8b04d342f5b64
