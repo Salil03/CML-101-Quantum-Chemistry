@@ -63,7 +63,7 @@ $\psi(r_1, r_2,\dots ,t) \rightarrow$ time-dependent wavefunction
 
 $\psi(r_1, r_2,\dots) \rightarrow$ time-independent wavefunction
 
-\subsection{Postulate II: The Born Interpretation} 
+\subsubsection{Born Interpretation} 
 \textbf{For a system described by the wavefunction $\psi(r_1, r_2, \dots)$ the probability of finding particle 1 in the volume element $\dd{\tau_1}$ at $r_1$, particle 2 in the volume element $\dd{\tau_2}$ at $r_2$, etc. is proportional to $\abs{\psi}^2 \dd{\tau_1} \dd{\tau_2} \dots$}
 
 $\abs{\psi}^2 \rightarrow$ probability density
@@ -76,7 +76,7 @@ A wavefunction is said to be normalised if $\int \psi^* \psi \dd{\tau} =1$
 
 Hence the normalisation constant $N$(which when multiplied to the wavefunction normalises it) is equal to $\frac{1}{\left(\int \psi^* \psi \dd{\tau} \right)^{1/2}}$. If this integral has a finite value, the wavefunction is \textbf{square-integrable}.
 
-\subsection{Constraints on Wavefunction}
+\subsubsection{Constraints on Wavefunction}
 
 \begin{itemize}
     \item $\psi$ must not be infinite over a finite region
@@ -85,13 +85,14 @@ Hence the normalisation constant $N$(which when multiplied to the wavefunction n
     \item $\dv{\psi}{x}$ must be continuous
 \end{itemize}
 
-\subsection{Postulate III: Quantum Mechanical Operators}
+
+\subsection{Postulate II: Quantum Mechanical Operators}
 
 \textbf{For each observable property $\Omega$ of a system there is a corresponding operator $\vectorunit{\Omega}$ built from the following position and momentum operators:}
 
 \begin{itemize}
     \item $\vectorunit{x} = x \times$
-    \item $\vectorunit{p} = -\frac{\hbar}{i} \grad$ or in special case of one dimension $\vectorunit{p_x} = -\frac{\hbar}{i} \dv{}{x}$
+    \item $\vectorunit{p} = -i \hbar \grad$ or in special case of one dimension $\vectorunit{p}_x = -i\hbar \pdv{x}$
 \end{itemize}
 
 All the operators we encounter are linear i.e. $\vectorunit{\Omega}(\psi_1 + \psi_2) =  \vectorunit{\Omega}(\psi_1) + \vectorunit{\Omega}(\psi_2)$
@@ -124,15 +125,38 @@ where,
     \omega\text{ is called observable or \textbf{eigenvalue} of operator. It is always a real value.}\\
     \psi \text{ is the wavefunction and also called as \textbf{eigenfunction} of the operator}
 \end{gather*}
-\subsection{Postulate IV: Eigenvalues and Eigenfunctions}
-\textbf{If the system is described by a wavefunction $\psi$ that is an eigenfunction of $\vectorunit{\Omega}$ such that $\vectorunit{\Omega} \psi = \omega \psi$ then the outcome of a measurement of $\Omega$ will be the eigenvalue $\omega$}
 
-eigenvalue is real $\iff$ the operator $\vectorunit{\Omega}$ is Hermitian:
+\subsection{Postulate III: Eigenvalues and Eigenfunctions}
+\textbf{If the system is described by a wavefunction $\psi$ that is an eigenfunction of $\vectorunit{\Omega}$ such that $\vectorunit{\Omega} \psi = \omega \psi$ then the outcome of a measurement of $\Omega$ will be the eigenvalue $\omega$.Operator $\vectorunit{\Omega}$ has to be Hermitian and observable $\omega$ has to be purely real.}
+
 
 \begin{equation*}
-    \int \psi_1 ^* \vectorunit{\Omega} \psi_2 \dd{x} = \left[ \int \psi_2 ^* \vectorunit{\Omega} \psi_1 \dd{x} \right]^*
+    \int \psi_1 ^* \vectorunit{\Omega} \psi_2 \dd{x} = \left[ \int \psi_2 ^* \vectorunit{\Omega} \psi_1 \dd{x} \right]^* \quad \quad \forall \psi_1, \psi_2
 \end{equation*}
 The momentum and position operators are hermitian. Sum and product of two hermitian operators is also hermitian.
+
+\subsubsection{Orthogonality of Eigenfunctions}
+\textbf{Eigenfunctions corresponding to different eigenvalues of the same Hermitian operator are orthogonal.} To say that two different functions $\psi_i$ and $\psi_j$ are orthogonal means that the integral (over all space) of their product is zero:
+
+\begin{equation*}
+    \int \psi_i ^* \psi_j \dd{\tau} = 0
+\end{equation*}
+in a special case when both functions are normalised,
+
+\begin{equation*}
+    \int \psi_i ^* \psi_j \dd{\tau} = \delta_{ij}
+\end{equation*}
+
+\subsection{Postulate IV: Basis Set Postulate}
+
+\textbf{The set of functions $\psi_k$ which are eigenfunctions of the eigenvalue equation form a complete set of linearly independent functions. They can be said to form a basis set in terms of which any wavefunction representing the system can be expressed:}
+\begin{equation*}
+    \psi = \sum c_k \psi_k
+\end{equation*}
+
+This implies that any wavefunction $\psi$ representing a physical system can be expressed as a linear combination of the eigenfunctions of any physical observable of the system.
+
+
 
 \subsection{Postulate V: Predicting Experiments}
 \textbf{When the value of an observable $\Omega$ is measured for a system that is described by a wavefunction which is a linear combination, $\psi = \sum_k c_k \psi_k$, each measurement of $\Omega$ gives one of the eigenvalues $\omega_k$ with a probability proportional to $\abs{c_k}^2$.}
@@ -153,17 +177,9 @@ In the case of $\psi = \sum_{k} c_k \psi_k$, the expectation value is($\psi$ is 
 \end{equation*}
 
 \end{shaded}
-\subsubsection{Orthogonality of Eigenfunctions}
-\textbf{Eigenfunctions corresponding to different eigenvalues of the same Hermitian operator are orthogonal.} To say that two different functions $\psi_i$ and $\psi_j$ are orthogonal means that the integral (over all space) of their product is zero:
 
-\begin{equation*}
-    \int \psi_i ^* \psi_j \dd{\tau} = 0
-\end{equation*}
-in a special case when both functions are normalised,
 
-\begin{equation*}
-    \int \psi_i ^* \psi_j \dd{\tau} = \delta_{ij}
-\end{equation*}
+
 
 \section{The Uncertainty Principle}
 \begin{shaded}
@@ -183,7 +199,7 @@ Note that there is no such constraint on say, $p_y$ and $x$
 
 Two observables $\Omega_1$ and $\Omega_2$ are complementary if $\vectorunit{\Omega}_1 \vectorunit{\Omega}_2 \psi \neq  \vectorunit{\Omega}_2 \vectorunit{\Omega}_1 \psi$
 
-The commutator is of the two operators is defined as their difference: $\comm{\vectorunit{\Omega}_1}{\vectorunit{\Omega}_2} = \vectorunit{\Omega}_1\vectorunit{\Omega}_2 - \vectorunit{\Omega}_2\vectorunit{\Omega}_1$. If two operators commute then their commutator is 0.
+The commutator of the two operators is defined as their difference: $\comm{\vectorunit{\Omega}_1}{\vectorunit{\Omega}_2} = \vectorunit{\Omega}_1\vectorunit{\Omega}_2 - \vectorunit{\Omega}_2\vectorunit{\Omega}_1$. If two operators commute then their commutator is 0.
 
 \begin{shaded}
 \textbf{General Uncertainty Principle}
@@ -201,7 +217,7 @@ from which it immediately follows that
 
 \section{Motion in 1D}
 
-A particle with net motion is described by a complex wavefunction. A wavefunction that is purely real corresponds to zero net motion.
+A particle with net motion is described by a complex wavefunction. A wavefunction that is purely real corresponds to zero net motion. Because purely real wavefunction can be described as a linear combination of wavefunctions which are conjugates of each other. This gives an expectation value of 0 to linear momentum
 
 For a freely moving particle in one dimension, Schrodinger's equation is
 
@@ -325,7 +341,7 @@ $$\psi_n(x) = \left(\frac{2}{L}\right)^{1/2}\sin{\frac{n\pi x}{L}} = \frac{1}{2i
 It follows that linear momentum will be $k\hbar$ for half measurements and $-k\hbar$ for other half. So expectation value is 0. Which we could even obtain directly by integration:
 
 \begin{equation*}
-    \expval{p} =  \frac{2\hbar n \pi}{iL^2} \int_0 ^L \sin{\frac{n\pi x}{L}} \cos{\frac{n \pi x}{L}} \dd{x} = 0
+    \expval{p} =  \frac{-2 i\hbar n \pi}{L^2} \int_0 ^L \sin{\frac{n\pi x}{L}} \cos{\frac{n \pi x}{L}} \dd{x} = 0
 \end{equation*}
 
 Because $n$ cannot be zero, the lowest energy that the particle may possess is not zero (as would be allowed by classical mechanics) but this lowest, irremovable energy is called the \textbf{zero-point energy}. The physical origin of the zero-point energy can be explained in two ways:
@@ -386,6 +402,8 @@ Each occurrence of degeneracy is related to a symmetry of the system. In this ca
 
 \subsubsection{Multiplicity}
 \textbf{Multiplicity is defined as $2S+1$ where $S$ is total spin angular momentum quantum number.} Multiplicity tells the number of permitted values of $m_s$, the spin quantum number. For electron in atom, multiplicity $= 2$, because only $m_s = 1/2$ and $m_s = -1/2$ are allowed.
+
+Also these permitted values of spin quantum number are $\{-S, -S+1, -S+2 ,\cdot , S \}$
 \subsection{Motion in 3D box}
 
 Using similar separation of variables we get the following:
@@ -724,13 +742,6 @@ The angular part depends on $l$ and $m$.
 \subsection{Quantum Numbers and Graphs}
 Read from notebook
 
-\subsection{Atomic Orbitals}
-\begin{figure}[htbp]
-  \centering
-  \includesvg[width=0.9\linewidth]{orbitals.svg}
-  \caption{Simplified atomic orbitals}
-\end{figure}
-
 \section{Common Integrals}
 \begin{itemize}
     \item $\int_0 ^{\infty} x^n e^{-a x} \dd{x}=\frac{n!}{a^{n+1}} $
@@ -742,8 +753,10 @@ Read from notebook
 \section{Common Operators}
 \begin{itemize}
     \item \textbf{Energy: } $\vectorunit{H} = -\frac{\hbar^2}{2m} \grad^2 + \vectorunit{V}$
-    \item \textbf{Linear Momentum: } $\vectorunit{p_x} = \frac{\hbar}{i} \frac{\partial}{\partial x}$
-    \item \textbf{Electric dipole moment:} $\vectorunit{\mu_x} = -ex \times$
-    \item \textbf{Angular Momentum: } $\vectorunit{L} = \vectorunit{r} \times \vectorunit{p}$
+    \item \textbf{Linear Momentum: } $\vectorunit{p}_x = -i\hbar \frac{\partial}{\partial x}$
+    \item \textbf{Electric dipole moment:} $\vectorunit{\mu}_x = -ex \times$
+    \item \textbf{Angular Momentum: } $\vectorunit{L} = \vectorunit{r} \times \vectorunit{p}$, \quad
+    $L_x = -i\hbar \left(y \pdv{z} - z \pdv{y}\right)$, \quad $L_y = -i\hbar \left(z \pdv{x} - x \pdv{z}\right)$, \quad $L_z = -i\hbar \left(x \pdv{y} - y \pdv{z}\right)$
+    
 \end{itemize}
 \end{document}
