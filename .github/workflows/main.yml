@@ -19,9 +19,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: Instal Inkscape
-        run: "sudo add-apt-repository ppa:inkscape.dev/stable && apt update && apt install inkscape && inkscape -D orbitals.svg  -o orbitals.pdf --export-latex"
-
+      - name: Install Inkscape Repo
+        run: "sudo add-apt-repository ppa:inkscape.dev/stable"
+      - name: Update sudo
+        run: "sudo apt update"
+      - name: Install Inkscape
+        run: "sudo apt install inkscape"
+      - name: Convert SVG
+        run: " inkscape -D orbitals.svg  -o orbitals.pdf --export-latex"
+        
       # Runs a single command using the runners shell
       - name: LaTeX Compile
         uses: xu-cheng/latex-action@v2
