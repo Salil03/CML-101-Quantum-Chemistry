@@ -151,10 +151,14 @@ in a special case when both functions are normalised,
 
 \textbf{The set of functions $\psi_k$ which are eigenfunctions of the eigenvalue equation form a complete set of linearly independent functions. They can be said to form a basis set in terms of which any wavefunction representing the system can be expressed:}
 \begin{equation*}
-    \psi = \sum c_k \psi_k
+    \psi = \sum_{k=1}^{\infty} c_k \psi_k
 \end{equation*}
 
-This implies that any wavefunction $\psi$ representing a physical system can be expressed as a linear combination of the eigenfunctions of any physical observable of the system.
+This implies that any wavefunction $\psi$ representing a physical system can be expressed as a linear combination of the eigenfunctions of any physical observable of the system. This is the Fourier Series of $\psi$ and it's existence is ensured by Dirichlet's Theorem. You can find the constant $c_m$ by Fourier's trick: Multiply both sides by some $\psi_m^*$ and integrate.
+
+$$\int_0 ^{\infty} \psi_m^* \psi \dd{x} = \sum_{k=1} ^{\infty} c_k\int_0 ^{\infty} \psi_m^* \psi_k \dd{x} =  \sum_{k=1} ^{\infty} c_k \delta_{m, k} = c_m$$
+
+$$\therefore c_m = \int_0 ^{\infty} \psi_m^* \psi \dd{x} $$
 
 
 
@@ -403,7 +407,7 @@ Each occurrence of degeneracy is related to a symmetry of the system. In this ca
 \subsubsection{Multiplicity}
 \textbf{Multiplicity is defined as $2S+1$ where $S$ is total spin angular momentum quantum number.} Multiplicity tells the number of permitted values of $m_s$, the spin quantum number. For electron in atom, multiplicity $= 2$, because only $m_s = 1/2$ and $m_s = -1/2$ are allowed.
 
-Also these permitted values of spin quantum number are $\{-S, -S+1, -S+2 ,\cdot , S \}$
+Also these permitted values of spin quantum number are $\{-S, -S+1, -S+2 ,\dots , S \}$
 \subsection{Motion in 3D box}
 
 Using similar separation of variables we get the following:
